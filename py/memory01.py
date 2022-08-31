@@ -24,8 +24,9 @@ newgame = True
 while True:
    if newgame:
        music.play(music.JUMP_UP)
+       answer = []
        n = 0
-       while n > 2:
+       while n < 3:
            x = random.randint(0, 24)
            if x in answer:
                continue
