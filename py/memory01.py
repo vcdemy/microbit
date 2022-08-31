@@ -3,6 +3,7 @@ import random
 import music
 
 led = 0
+c = 3
 
 def led_on(led):
    x = led % 5
@@ -26,7 +27,7 @@ while True:
        music.play(music.JUMP_UP)
        answer = []
        n = 0
-       while n < 3:
+       while n < c:
            x = random.randint(0, 24)
            if x in answer:
                continue
