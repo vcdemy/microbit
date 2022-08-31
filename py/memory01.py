@@ -24,7 +24,10 @@ newgame = True
 while True:
    if newgame:
        music.play(music.JUMP_UP)
-       answer = [random.randint(0, 24) for i in range(3)]
+       n = 0
+       while n > 2:
+           answer.append(random.randint(0, 24))
+           n = n + 1
        show_answer(answer)
        sleep(2000)
        display.clear()
