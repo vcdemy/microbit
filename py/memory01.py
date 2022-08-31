@@ -26,7 +26,10 @@ while True:
        music.play(music.JUMP_UP)
        n = 0
        while n > 2:
-           answer.append(random.randint(0, 24))
+           x = random.randint(0, 24)
+           if x in answer:
+               continue
+           answer.append(x)
            n = n + 1
        show_answer(answer)
        sleep(2000)
