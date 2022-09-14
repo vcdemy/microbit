@@ -25,6 +25,8 @@ while True:
     if button_a.was_pressed():
         spin = True
     if button_b.was_pressed():
+        if not spin:
+            continue
         if x == x0 and y == y0:
             music.play(music.JUMP_UP)
             success += 1
