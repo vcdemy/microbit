@@ -14,11 +14,12 @@ leds = ['00000']*5
 
 display.set_pixel(x, y, 9)
 
+delay = 10000
 counter = 0
 
 while True:
     # display image
-    if counter > 10000:
+    if counter > delay:
         display.show(Image(':'.join(leds)))
         leds.insert(0, new_row())
         row = leds.pop()
@@ -28,10 +29,9 @@ while True:
         else:
             if '9' in row:
                 music.play(music.JUMP_DOWN)
-        counter = counter - 10000
+        counter = counter - delay
+        delay = delay - 1
     
-    # sleep(2000)
-
     # # control the movement of the led at the bottom row
     if button_a.was_pressed():
         display.set_pixel(x, y, 0)
